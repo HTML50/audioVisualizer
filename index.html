@@ -1,20 +1,162 @@
 <html>
-    <head>
-        <title>HTML5 Audio Visualizing</title>  
-    </head>
-    <style>
-    *{
-margin:0;
-padding:0;
+<head>
+<title>HTML5 Audio Visualizing</title>
+</head>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
+<style>
+      * {
+      margin: 0;
+      padding: 0;
     }
-    </style>
-    <body>
-        <div id="wrapper">
-          <input type='button' onclick='audio.pause()' value='pause'>
-          <input type='button' onclick='audio.play()' value='start'>
-          <canvas id="canvas" width="1366" height="560"></canvas>
-         
-        </div>
-     <script type="text/javascript" src="./av.js"></script>
-    </body>
+    html {
+      overflow: hidden;
+    }
+    omfg {
+      position: absolute;
+      top: 250px;
+      transition: opacity .25s;
+    }
+    .text-gradient {
+      font-size: 9em;
+      font-family: 'Josefin Sans', sans-serif;
+      background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#f500d8), to(#fff));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .omfg {
+      font-size: 30px;
+      left: 895px;
+      font-family: 'Josefin Sans', sans-serif;
+      color: #f500d8;
+      letter-spacing: -2px;
+    }
+    #o,#g {
+      left: calc(1366px / 2 - 50px);
+    }
+    #m {
+      left: 585px;
+    }
+    #f {
+      left: 715px;
+    }
+    #oh {
+      top: 275px;
+    }
+    #my {
+      top: 302px;
+    }
+    #fucking {
+      top: 330px;
+    }
+    #god {
+      top: 358px;
+    }
+    .hidden {
+      opacity: 0;
+      transition: opacity .25s;
+    }
+    .fly {
+      animation: flyFromZero .6s ease-in-out forwards;
+    }
+    @keyframes flyFromZero {
+      from {
+        transform: scale(0);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+    .rollLeft {
+      animation: rollToLeft .6s ease-in-out forwards;
+    }
+    @keyframes rollToLeft {
+      from {
+        transform: rotate(-90deg);
+      }
+      to {
+        transform: rotate(0deg);
+        left: 470px
+      }
+    }
+    .rollRight {
+      animation: rollRight .6s ease-in-out forwards;
+    }
+    @keyframes rollRight {
+      from {
+        transform: rotate(-90deg);
+      }
+      to {
+        transform: rotate(0deg);
+        left: 795px
+      }
+    }
+    .textBounce {
+      animation: textBounce .3s ease-in-out forwards;
+    }
+    @keyframes textBounce {
+      0 {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    .show {
+      animation: show .2s ease-in-out forwards;
+    }
+    @keyframes show {
+      from {
+        display: none;
+        transform: scale(0);
+      }
+      to {
+        display: block;
+        transform: scale(1);
+      }
+    }
+    .strech {
+      animation: strech .5s ease-in-out forwards;
+    }
+    @keyframes strech {
+      from {
+        width: 100px;
+        left: 640px;
+      }
+      to {
+        width: 330px;
+        left: 520px;
+      }
+    }
+    #oval {
+      position: absolute;
+      width: 100px;
+      height: 10px;
+      left: 640px;
+      top: 390px;
+      background: radial-gradient(ellipse at center, #21dd13 0%,#fff 76%,#fff 84%);
+      border-radius: 100px / 5px;
+      box-shadow: 0px 0px 50px #a3eabe;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+</style>
+<body>
+<canvas id="canvas" width="1366" height="680" style="position:absolute;z-index:-1;"></canvas>
+<canvas id="bg" width="1366" height="680" style="position:absolute;z-index:-1;"></canvas>
+<omfg class='text-gradient hidden' id='o'>O</omfg>
+<omfg class='text-gradient hidden' id='m'>M</omfg>
+<omfg class='text-gradient hidden' id='f'>F</omfg>
+<omfg class='text-gradient hidden' id='g'>G</omfg>
+<oval id='oval'></oval>
+<sectioin id='group'>
+<omfg class='hidden omfg' id='oh'>OH</omfg>
+<omfg class='hidden omfg' id='my'>MY</omfg>
+<omfg class='hidden omfg' id='fucking'>FUCKING</omfg>
+<omfg class='hidden omfg' id='god'>GOD</omfg>
+</sectioin>
+<script type="text/javascript" src="./av1.js"></script>
+</body>
 </html>
