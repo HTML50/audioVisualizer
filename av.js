@@ -230,7 +230,7 @@ function draw() {
 	p.stroke();
 	p.closePath();
 
-	//脟氓鲁媒脫脪虏脿碌脳虏驴虏驴路脰脝碌脝脳
+	//脟氓鲁媒脫脪虏脿bi碌脳虏驴虏驴路脰脝碌脝脳
 	p.fillStyle = '#fff';
 	p.fillRect(width - 480, height - 300, 480, 100);
 
