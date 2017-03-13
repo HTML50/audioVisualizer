@@ -2,7 +2,7 @@
 <head>
 <title>HTML5 Audio Visualizing</title>
 </head>
-<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
 <style>
       * {
       margin: 0;
@@ -29,13 +29,8 @@
       font-family: 'Josefin Sans', sans-serif;
       color: #f500d8;
       letter-spacing: -2px;
-    } 
-    .hidden {
-      opacity: 0;
-      transition: opacity .25s;
     }
-    
-     #o,#g {
+    #o,#g {
       left: calc(1366px / 2 - 50px);
     }
     #m {
@@ -56,40 +51,10 @@
     #god {
       top: 358px;
     }
-    
-#leftFlyin,#rightFlyin{
-position:absolute;
-font-size:5em;
-font-style:italic;
-font-weight:800;
-}
-#leftFlyin{
-font-size:4em;
-top:400px;
-left:-200px;
-}
-
-#rightFlyin{
-top:500px;
-right:-200px;
-}
-     
-    
-    #oval {
-      position: absolute;
-      width: 100px;
-      height: 10px;
-      left: 640px;
-      top: 390px;
-      background: radial-gradient(ellipse at center, #21dd13 0%,#fff 76%,#fff 84%);
-      border-radius: 100px / 5px;
-      box-shadow: 0px 0px 50px #a3eabe;
+    .hidden {
       opacity: 0;
-      transition: opacity 1s;
+      transition: opacity .25s;
     }
-    
-
-    
     .fly {
       animation: flyFromZero .6s ease-in-out forwards;
     }
@@ -165,40 +130,31 @@ right:-200px;
         left: 520px;
       }
     }
-    
-    .flyFromLeft{
-      animation: flyFromLeft 8s ease-in-out forwards;
-    }
-    @keyframes flyFromLeft {
-      0% {
-        left: -200px;
-      }
-      10%{
-        left: 200px;
-      }
-      
-      90%{
-        left: 600px;
-      }
-      
-      100% {
-        left: 9999px;
-      }
-    }
-    .flyFromRight{
-      animation: flyFromRight .5s ease-in-out forwards;
-    }
-    @keyframes flyFromRight {
-      from {
-        width: 100px;
-        left: 640px;
-      }
-      to {
-        width: 330px;
-        left: 520px;
-      }
+    #oval {
+      position: absolute;
+      width: 100px;
+      height: 10px;
+      left: 640px;
+      top: 390px;
+      background: radial-gradient(ellipse at center, #21dd13 0%,#fff 76%,#fff 84%);
+      border-radius: 100px / 5px;
+      box-shadow: 0px 0px 50px #a3eabe;
+      opacity: 0;
+      transition: opacity 1s;
     }
     
+#leftFlyin,#rightFlyin{
+position:absolute;
+}
+#leftFlyin{
+top:500px;
+left:-200px;
+      }
+#rightFlyin{
+top:500px;
+left:-200px;
+      }
+
 
 </style>
 <body>
@@ -214,11 +170,9 @@ right:-200px;
 <omfg class='hidden omfg' id='my'>MY</omfg>
 <omfg class='hidden omfg' id='fucking'>FUCKING</omfg>
 <omfg class='hidden omfg' id='god'>GOD</omfg>
-</sectioin>
-
 <omfg id='leftFlyin' class='text-gradient'>star me on my github</omfg>
 <omfg id='rightFlyin' class='text-gradient'>@HTML50</omfg>
-
-<script type="text/javascript" src="./av.js"></script>
+</sectioin>
+<script type="text/javascript" src="./avStatic.js"></script>
 </body>
 </html>

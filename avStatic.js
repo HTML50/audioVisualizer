@@ -121,10 +121,6 @@ function fontCSSAnimation() {
 		setTimeout(draw, 300);
 	}, 4000);
 
-  
-  leftFlyin.classList.add('flyFromLeft');
-  rightFlyin.classList.add('flyFromRight');
-  //辐射层透明，这样才能显示后面的频谱
 	penBg.globalAlpha = 0.2;
 }
 
@@ -210,6 +206,8 @@ function draw() {
 
 
 
+
+
 	//右
 
 	//右填充
@@ -274,5 +272,6 @@ function draw() {
 	p.fill();
 	p.closePath();
 	p.shadowBlur = 0;
+
 
 }
