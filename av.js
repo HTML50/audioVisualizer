@@ -143,6 +143,9 @@ function fontCSSAnimation() {
 		leftFlyin.classList.remove('flyFromLeft');
 		rightFlyin.classList.remove('flyFromRight');
 		leftFlyin.innerText='star me on my github';
+	}, 149000);
+  
+  setTimeout(function() {
 		leftFlyin.classList.add('flyFromLeft');
 		rightFlyin.classList.add('flyFromRight');
 	}, 150000);
@@ -178,12 +181,15 @@ function fontCSSAnimation() {
 		document.body.style.backgroundColor = '#000';
     canvas.style.opacity=0;
     bg.style.opacity=0;
-	}, 230000);
+	}, 240000);
 
 	setTimeout(function() {
 		document.body.style.backgroundColor = '#fff';
-		replay.style.opacity =1;
-	}, 235000);
+    replay.style.display ='block';
+    github.style.display ='block';
+		replay.classList.remove('hidden');
+		github.classList.remove('hidden');
+	}, 250000);
 
   //辐射层透明，这样才能显示后面的频谱
 	penBg.globalAlpha = 0.2;

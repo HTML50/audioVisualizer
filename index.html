@@ -12,10 +12,17 @@
     html {
     overflow: hidden;
     }
-	body,canvas{
-	transition:background 5s;
-  opacity:3s;
-	}
+    body,canvas{
+    transition:background 5s;
+    opacity:3s;
+    }
+    replay,github{
+      width:300px;
+    margin:auto;
+    position:absolute;
+    top:0;left:0;bottom:0;right:0;
+  transition:transform 1s;  
+    }
     omfg {
       position: absolute;
       top: 250px;
@@ -95,7 +102,19 @@
       transition: opacity 1s;
     }
     
-
+#replay{
+    height:300px;
+    font-size:5em;
+display:hidden;
+    }
+#github{
+    height:100px;
+    font-size:5em;
+    display:hidden;
+    }
+#replay:hover, #github:hover{
+transform:scale(1.5)
+    }
     
     .fly {
       animation: flyFromZero .6s ease-in-out forwards;
@@ -244,7 +263,8 @@
 <omfg id='leftFlyin' class='text-gradient'>star me on my github</omfg>
 <omfg id='rightFlyin' class='text-gradient'><a href='https://github.com/html50/audioVisualizer' target='_blank'>@HTML50</a></omfg>
 
-<replay id='replay' class='hidden text-gradient' style='font-size:5em;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;width:300px;height:200px'><a href='javascript:location.reload()'>replay</a><br /><a target='_blank' href='https://github.com/html50/audioVisualizer'>my github</a></replay>
+<replay id='replay' class='hidden text-gradient'><a href='javascript:location.reload()'>replay</a></replay>
+<github id='github' class='hidden text-gradient'><a target='_blank' href='https://github.com/html50/audioVisualizer'>github</a></github>
 
 <script type="text/javascript" src="./av.js"></script>
 </body>
