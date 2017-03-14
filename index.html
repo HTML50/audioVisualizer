@@ -23,7 +23,6 @@ text-decoration:none;
     margin:auto;
     position:absolute;
     top:0;left:0;bottom:0;right:0;
-  transition:transform 1s;  
     }
     omfg {
       position: absolute;
@@ -106,13 +105,15 @@ text-decoration:none;
     
 #replay{
     height:300px;
-    font-size:5em;
-    display:none;
     }
 #github{
     height:100px;
-    font-size:5em;
+    }
+
+#replay,#github{
     display:none;
+    font-size:5em;
+transition:opacity 3s,transform 1s;
     }
 #replay:hover, #github:hover{
 transform:scale(1.5)
