@@ -174,14 +174,14 @@ function fontCSSAnimation() {
 	}, 229000);
 	setTimeout(function() {
 		g.classList.add('zoomToZero');
+    bg.style.opacity=0;
 	}, 229500);
 
 	//背景变黑，重播
 	setTimeout(function() {
 		document.body.style.backgroundColor = '#000';
     canvas.style.opacity=0;
-    bg.style.opacity=0;
-	}, 240000);
+	}, 230000);
 
 	setTimeout(function() {
 		document.body.style.backgroundColor = '#fff';
@@ -189,7 +189,7 @@ function fontCSSAnimation() {
     github.style.display ='block';
 		replay.classList.remove('hidden');
 		github.classList.remove('hidden');
-	}, 250000);
+	}, 235000);
 
   //辐射层透明，这样才能显示后面的频谱
 	penBg.globalAlpha = 0.2;
