@@ -174,13 +174,13 @@ function fontCSSAnimation() {
 	}, 229000);
 	setTimeout(function() {
 		g.classList.add('zoomToZero');
-    bg.style.opacity=0;
+    canvas.style.opacity=0;
 	}, 229500);
 
 	//背景变黑，重播
 	setTimeout(function() {
 		document.body.style.backgroundColor = '#000';
-    canvas.style.opacity=0;
+    bg.style.opacity=0;
 	}, 230000);
 
 	setTimeout(function() {
