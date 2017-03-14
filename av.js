@@ -121,9 +121,70 @@ function fontCSSAnimation() {
 		setTimeout(draw, 300);
 	}, 4000);
 
-  
-  leftFlyin.classList.add('flyFromLeft');
-  rightFlyin.classList.add('flyFromRight');
+	
+	//中场的文字左右飞入
+	setTimeout(function() {
+		leftFlyin.classList.add('flyFromLeft');
+		rightFlyin.classList.add('flyFromRight');
+	}, 60000);
+	
+	setTimeout(function() {
+		leftFlyin.classList.remove('flyFromLeft');
+		rightFlyin.classList.remove('flyFromRight');
+		leftFlyin.innerText='follw me on my github';
+	}, 69000);
+	
+	setTimeout(function() {
+		leftFlyin.classList.add('flyFromLeft');
+		rightFlyin.classList.add('flyFromRight');
+	}, 70000);
+	
+	setTimeout(function() {
+		leftFlyin.classList.remove('flyFromLeft');
+		rightFlyin.classList.remove('flyFromRight');
+		leftFlyin.innerText='star me on my github';
+		leftFlyin.classList.add('flyFromLeft');
+		rightFlyin.classList.add('flyFromRight');
+	}, 150000);
+	
+	setTimeout(function() {
+		leftFlyin.classList.remove('flyFromLeft');
+		rightFlyin.classList.remove('flyFromRight');
+		leftFlyin.innerText='follw me on my github';
+	}, 159000);
+	
+	setTimeout(function() {
+		leftFlyin.classList.add('flyFromLeft');
+		rightFlyin.classList.add('flyFromRight');
+	}, 160000);
+	
+	//音乐结束，OMFG收缩
+	setTimeout(function() {
+		o.classList.add('zoomToZero');
+		oval.classList.add('zoomToZero');
+	}, 228000);
+	setTimeout(function() {
+		m.classList.add('zoomToZero');
+	}, 228500);
+	setTimeout(function() {
+		f.classList.add('zoomToZero');
+	}, 229000);
+	setTimeout(function() {
+		g.classList.add('zoomToZero');
+	}, 229500);
+
+	//背景变黑，重播
+	setTimeout(function() {
+		document.body.style.backgroundColor = '#000';
+    canvas.style.opacity=0;
+    bg.style.opacity=0;
+	}, 230000);
+
+	setTimeout(function() {
+		document.body.style.backgroundColor = '#fff';
+		replay.style.opacity =1;
+	}, 235000);
+
   //辐射层透明，这样才能显示后面的频谱
 	penBg.globalAlpha = 0.2;
 }

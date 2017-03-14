@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>HTML5 Audio Visualizing</title>
+<meta charset='utf-8'>
 </head>
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100" rel="stylesheet">
 <style>
@@ -11,6 +12,10 @@
     html {
     overflow: hidden;
     }
+	body,canvas{
+	transition:background 5s;
+  opacity:3s;
+	}
     omfg {
       position: absolute;
       top: 250px;
@@ -18,8 +23,8 @@
     }
     .text-gradient {
       font-size: 9em;
-      font-family: 'Josefin Sans', sans-serif;
-      background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#f500d8), to(#fff));
+      font-family: 'Josefin Sans', sans-serif;	
+      background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#f500d8), to(#CC03B4));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -29,6 +34,7 @@
       font-family: 'Josefin Sans', sans-serif;
       color: #f500d8;
       letter-spacing: -2px;
+	  font-weight:800;
     } 
     .hidden {
       opacity: 0;
@@ -57,23 +63,24 @@
       top: 358px;
     }
     
-#leftFlyin,#rightFlyin{
-position:absolute;
-font-size:5em;
-font-style:italic;
-font-weight:800;
-}
-#leftFlyin{
-font-size:4em;
-top:400px;
-left:-200px;
-}
-
-#rightFlyin{
-top:500px;
-right:-200px;
-}
-     
+	#leftFlyin,#rightFlyin{
+	position:absolute;
+	font-size:5em;
+	font-style:italic;
+	font-weight:800;
+	}
+	#leftFlyin{
+	font-size:4em;
+	top:430px;
+	left:-600px;
+	width:700px;
+	}
+	#rightFlyin{
+	top:500px;
+	right:-600px;
+	width:400px;
+	}
+		 
     
     #oval {
       position: absolute;
@@ -167,48 +174,66 @@ right:-200px;
     }
     
     .flyFromLeft{
-      animation: flyFromLeft 8s ease-in-out forwards;
+      animation: flyFromLeft 9s linear forwards;
     }
     @keyframes flyFromLeft {
       0% {
         left: -200px;
       }
-      10%{
+      5%{
         left: 200px;
       }
       
-      90%{
+      95%{
         left: 600px;
       }
       
       100% {
-        left: 9999px;
+        left: 1366px;
       }
     }
     .flyFromRight{
-      animation: flyFromRight .5s ease-in-out forwards;
+      animation: flyFromRight 9s linear forwards;
     }
     @keyframes flyFromRight {
-      from {
-        width: 100px;
-        left: 640px;
+      0% {
+        right: -200px;
       }
-      to {
-        width: 330px;
-        left: 520px;
+      5%{
+        right: 200px;
+      }
+      
+      95%{
+        right: 600px;
+      }
+      
+      100% {
+        right: 1366px;
       }
     }
-    
+     .zoomToZero {
+      animation: zoomToZero .5s ease-in-out forwards;
+    }
+    @keyframes zoomToZero {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(0);
+      }
+    }
 
 </style>
 <body>
 <canvas id="canvas" width="1366" height="680" style="position:absolute;z-index:-1;"></canvas>
 <canvas id="bg" width="1366" height="680" style="position:absolute;z-index:-1;"></canvas>
+<sectioin id='OMFG'>
 <omfg class='text-gradient hidden' id='o'>O</omfg>
 <omfg class='text-gradient hidden' id='m'>M</omfg>
 <omfg class='text-gradient hidden' id='f'>F</omfg>
 <omfg class='text-gradient hidden' id='g'>G</omfg>
 <oval id='oval'></oval>
+</sectioin>
 <sectioin id='group'>
 <omfg class='hidden omfg' id='oh'>OH</omfg>
 <omfg class='hidden omfg' id='my'>MY</omfg>
@@ -217,7 +242,9 @@ right:-200px;
 </sectioin>
 
 <omfg id='leftFlyin' class='text-gradient'>star me on my github</omfg>
-<omfg id='rightFlyin' class='text-gradient'>@HTML50</omfg>
+<omfg id='rightFlyin' class='text-gradient'><a href='https://github.com/html50/audioVisualizer' target='_blank'>@HTML50</a></omfg>
+
+<replay id='replay' class='hidden text-gradient' style='font-size:5em;margin:auto;position:absolute;top:0;left:0;bottom:0;right:0;width:300px;height:200px'><a href='javascript:location.reload()'>replay</a><br /><a target='_blank' href='https://github.com/html50/audioVisualizer'>my github</a></replay>
 
 <script type="text/javascript" src="./av.js"></script>
 </body>
