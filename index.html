@@ -9,15 +9,17 @@
       margin: 0;
       padding: 0;
     }
+      a{
+text-decoration:none;
+      }
     html {
     overflow: hidden;
     }
     body,canvas{
-    transition:background 5s;
-    opacity:3s;
+    transition:background 5s, opacity 3s;
     }
     replay,github{
-      width:300px;
+    width:300px;
     margin:auto;
     position:absolute;
     top:0;left:0;bottom:0;right:0;
@@ -244,8 +246,8 @@ transform:scale(1.5)
 
 </style>
 <body>
-<canvas id="canvas" width="1366" height="680" style="position:absolute;z-index:-1;"></canvas>
-<canvas id="bg" width="1366" height="680" style="position:absolute;z-index:-1;"></canvas>
+<canvas id="bg" width="1366" height="680" style="position:absolute;z-index:1;"></canvas>
+<canvas id="canvas" width="1366" height="680"></canvas>
 <sectioin id='OMFG'>
 <omfg class='text-gradient hidden' id='o'>O</omfg>
 <omfg class='text-gradient hidden' id='m'>M</omfg>
