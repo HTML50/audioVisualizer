@@ -1,17 +1,17 @@
 <html>
 <head>
-<title>HTML5 Audio Visualizing</title>
+<title>Hello - OMFG | Audio Visualizer</title>
 <meta charset='utf-8'>
 </head>
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100" rel="stylesheet">
 <style>
-      * {
+    * {
       margin: 0;
       padding: 0;
     }
-      a{
-text-decoration:none;
-      }
+    a{
+    text-decoration:none;
+    }
     html {
     overflow: hidden;
     }
@@ -70,26 +70,25 @@ text-decoration:none;
     #god {
       top: 358px;
     }
-    
-	#leftFlyin,#rightFlyin{
-	position:absolute;
-	font-size:5em;
-	font-style:italic;
-	font-weight:800;
-	}
-	#leftFlyin{
-	font-size:4em;
-	top:430px;
-	left:-600px;
-	width:700px;
-	}
-	#rightFlyin{
-	top:500px;
-	right:-600px;
-	width:400px;
-	}
-		 
-    
+      
+    #leftFlyin,#rightFlyin{
+    position:absolute;
+    font-size:5em;
+    font-style:italic;
+    font-weight:800;
+    }
+    #leftFlyin{
+    font-size:4em;
+    top:430px;
+    left:-700px;
+    width:700px;
+    }
+    #rightFlyin{
+    top:500px;
+    left:1366px;
+    width:400px;
+    }
+		   
     #oval {
       position: absolute;
       width: 100px;
@@ -103,20 +102,20 @@ text-decoration:none;
       transition: opacity 1s;
     }
     
-#replay{
-    height:300px;
+    #replay{
+        height:300px;
     }
-#github{
-    height:100px;
+    #github{
+        height:100px;
     }
 
-#replay,#github{
+    #replay,#github{
     display:none;
     font-size:5em;
-transition:opacity 3s,transform 1s;
+    transition:opacity 3s,transform 1s;
     }
-#replay:hover, #github:hover{
-transform:scale(1.5)
+    #replay:hover, #github:hover{
+    transform:scale(1.5)
     }
     
     .fly {
@@ -200,7 +199,7 @@ transform:scale(1.5)
     }
     @keyframes flyFromLeft {
       0% {
-        left: -200px;
+        left: -700px;
       }
       5%{
         left: 200px;
@@ -219,18 +218,18 @@ transform:scale(1.5)
     }
     @keyframes flyFromRight {
       0% {
-        right: -200px;
+        left: 1366px;
       }
       5%{
-        right: 200px;
+        left: 700px;
       }
       
       95%{
-        right: 600px;
+        left: 300px;
       }
       
       100% {
-        right: 1366px;
+        left: -400px;
       }
     }
      .zoomToZero {
