@@ -17,8 +17,8 @@ var screenHeight = document.body.clientHeight,
 var width = canvas.width,
 	height = canvas.height;
 
-var p = canvas.getContext("2d");
-var penBg = bg.getContext("2d");
+var p = canvas.getContext("2d"),
+    penBg = bg.getContext("2d");
 
 analyser.fftSize = 4096;
 var length = analyser.fftSize;
@@ -27,7 +27,7 @@ var dataArray = new Uint8Array(length);
 
 
 audio.oncanplaythrough = function() {
-if(screenWidth!=width && screenHeight!=height){
+if(screenWidth!=width || screenHeight!=height){
   zoomPage();
 }
 	fontCSSAnimation();
