@@ -24,6 +24,9 @@
     body,canvas{
     transition:background 5s, opacity 3s;
     }
+    body{
+      height: 100%;
+    }
     replay,github{
     width:300px;
     margin:auto;
@@ -32,7 +35,7 @@
     }
     omfg {
       position: absolute;
-      top: 270px;
+      top: 265px;
       transition: opacity .25s;
     }
     .text-gradient {
@@ -250,8 +253,17 @@
       }
     }
 
+
+#loader{
+  font-size: 2em;
+  text-align: center;
+  line-height: 20em;
+}
 </style>
 <body>
+<div id="loader">loading...</div>
+
+
 <canvas id="canvas" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
 <canvas id="bg" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
 <sectioin id='OMFG'>
@@ -273,6 +285,8 @@
 
 <replay id='replay' class='hidden text-gradient'><a href='javascript:location.reload()'>replay</a></replay>
 <github id='github' class='hidden text-gradient'><a target='_blank' href='https://github.com/html50/audioVisualizer'>github</a></github>
+
+
 
 <script type="text/javascript" src="./av.js"></script>
 </body>

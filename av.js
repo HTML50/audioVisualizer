@@ -27,11 +27,19 @@ var dataArray = new Uint8Array(length);
 
 
 audio.oncanplaythrough = function() {
-if(screenWidth!=width || screenHeight!=height){
-  zoomPage();
-}
-	fontCSSAnimation();
-	audio.play();
+	if(screenWidth!=width || screenHeight!=height){
+	  zoomPage();
+	}
+
+	
+	//audio.play();
+
+ 	loader.innerHTML = 'click to play...'
+	document.addEventListener('click',function(){
+		loader.style.display = 'none'
+		audio.play();
+		fontCSSAnimation();
+	})
 };
 
 
