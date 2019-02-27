@@ -1,13 +1,4 @@
-var AudioContext = AudioContext || webkitAudioContext;
-var context = new AudioContext;
-//加载媒体
-var audio = new Audio("hello.mp4");
-//创建节点
-var source = context.createMediaElementSource(audio);
-var analyser = context.createAnalyser();
-//连接：source → analyser → destination
-source.connect(analyser);
-analyser.connect(context.destination);
+var AudioContext,context,source,analyser,p,penBg,dataArray,gradient,gradientRight;
 
 //检测分辨率，获得缩放比例
 var screenHeight = document.body.clientHeight,
@@ -17,25 +8,19 @@ var screenHeight = document.body.clientHeight,
 var width = canvas.width,
 	height = canvas.height;
 
-var p = canvas.getContext("2d"),
-    penBg = bg.getContext("2d");
-
-analyser.fftSize = 4096;
-var length = analyser.fftSize;
-//创建数据
-var dataArray = new Uint8Array(length);
-
+var audio = new Audio("hello.mp4");
 
 audio.oncanplaythrough = function() {
 	if(screenWidth!=width || screenHeight!=height){
 	  zoomPage();
+	  loader.innerHTML = 'click to play...'
 	}
 
 	
-	//audio.play();
 
- 	loader.innerHTML = 'click to play...'
+ 	
 	document.addEventListener('click',function(){
+		init();
 		loader.style.display = 'none'
 		audio.play();
 		fontCSSAnimation();
@@ -43,15 +28,40 @@ audio.oncanplaythrough = function() {
 };
 
 
-//左边的填充渐变色
-var gradient = p.createLinearGradient(0, 100, 480, 100);
+function init(){
+	AudioContext = AudioContext || webkitAudioContext;
+	context = new AudioContext;
+	//加载媒体
+	
+	//创建节点
+	source = context.createMediaElementSource(audio);
+	analyser = context.createAnalyser();
+	//连接：source → analyser → destination
+	source.connect(analyser);
+	analyser.connect(context.destination);
+
+
+	p = canvas.getContext("2d");
+	penBg = bg.getContext("2d");
+
+	analyser.fftSize = 4096;
+	var length = analyser.fftSize;
+	//创建数据
+	dataArray = new Uint8Array(length);
+
+
+gradient = p.createLinearGradient(0, 100, 480, 100);
 gradient.addColorStop("0", "#f500d8");
 gradient.addColorStop("1.0", "#ceaf11");
 
 //右边的填充渐变色
-var gradientRight = p.createLinearGradient(886, 100, 1366, 100);
+gradientRight = p.createLinearGradient(886, 100, 1366, 100);
 gradientRight.addColorStop("0", "#0ee7f7");
 gradientRight.addColorStop("1.0", "#2ce672");
+}
+
+//左边的填充渐变色
+
 
 function zoomPage(){
   var scaleX = (screenWidth/width).toPrecision(5),
@@ -61,7 +71,7 @@ function zoomPage(){
 		document.head.appendChild(style);
 		sheet = style.sheet;
 		sheet.insertRule('body{transform-origin:0% 0%;transform:scale('+scaleX+','+scaleY+');}', 0);
-    console.log('执行了zoom操作:',scaleX,scaleY)
+    	console.log('执行了zoom操作:',scaleX,scaleY)
 }
 
 
