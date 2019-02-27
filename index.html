@@ -1,301 +1,314 @@
-<html>
-<head>
-<title>Hello - OMFG | Audio Visualizer</title>
-<meta charset='utf-8'>
-</head>
-<style>
-@font-face {
-  font-family: 'Josefin Sans';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Josefin Sans Thin'), local('JosefinSans-Thin'), url(Josefin_Sans.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
-}
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    a{
+  <html>
+  <head>
+    <title>Hello - OMFG | Audio Visualizer</title>
+    <meta charset='utf-8'>
+  </head>
+  <style>
+  @font-face {
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Josefin Sans Thin'), local('JosefinSans-Thin'), url(Josefin_Sans.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  a{
     text-decoration:none;
-    }
-    html {
+  }
+  html {
     overflow: hidden;
-    }
-    body,canvas{
+  }
+  body,canvas{
     transition:background 5s, opacity 3s;
-    }
-    body{
-      height: 600px;
-      width: 1366px;
-    }
-    replay,github{
+  }
+  body{
+    height: 600px;
+    width: 1366px;
+  }
+  replay,github{
     width:300px;
     margin:auto;
     position:absolute;
     top:0;left:0;bottom:0;right:0;
-    }
-    omfg {
-      position: absolute;
-      top: 265px;
-      transition: opacity .25s;
-    }
-    .text-gradient {
-      font-size: 9em;
-      font-family: 'Josefin Sans', sans-serif;	
-      background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#f500d8), to(#CC03B4));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .omfg {
-      font-size: 30px;
-      left: 895px;
-      font-family: 'Josefin Sans', sans-serif;
-      color: #f500d8;
-      letter-spacing: -2px;
-	  font-weight:800;
-    } 
-    .hidden {
-      opacity: 0;
-      transition: opacity .25s;
-    }
-    
-     #o,#g {
-      left: calc(1366px / 2 - 50px);
-    }
-    #m {
-      left: 585px;
-    }
-    #f {
-      left: 715px;
-    }
-    #oh {
-      top: 275px;
-    }
-    #my {
-      top: 302px;
-    }
-    #fucking {
-      top: 330px;
-    }
-    #god {
-      top: 358px;
-    }
-      
-    #leftFlyin,#rightFlyin{
+  }
+  omfg {
+    position: absolute;
+    top: 265px;
+    transition: opacity .25s;
+  }
+  .text-gradient {
+    font-size: 9em;
+    font-family: 'Josefin Sans', sans-serif;	
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(#f500d8), to(#CC03B4));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .omfg {
+    font-size: 30px;
+    left: 895px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #f500d8;
+    letter-spacing: -2px;
+    font-weight:800;
+  } 
+  .hidden {
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  
+  #o,#g {
+    left: calc(1366px / 2 - 50px);
+  }
+  #m {
+    left: 585px;
+  }
+  #f {
+    left: 715px;
+  }
+  #oh {
+    top: 275px;
+  }
+  #my {
+    top: 302px;
+  }
+  #fucking {
+    top: 330px;
+  }
+  #god {
+    top: 358px;
+  }
+  
+  #leftFlyin,#rightFlyin{
     position:absolute;
     font-size:5em;
     font-style:italic;
     font-weight:800;
-    }
-    #leftFlyin{
+  }
+  #leftFlyin{
     font-size:4em;
     top:430px;
     left:-700px;
     width:700px;
-    }
-    #rightFlyin{
+  }
+  #rightFlyin{
     top:500px;
     left:1366px;
     width:400px;
-    }
-		   
-    #oval {
-      position: absolute;
-      width: 100px;
-      height: 10px;
-      left: 640px;
-      top: 390px;
-      background: radial-gradient(ellipse at center, #21dd13 0%,#fff 76%,#fff 84%);
-      border-radius: 100px / 5px;
-      box-shadow: 0px 0px 50px #a3eabe;
-      opacity: 0;
-      transition: opacity 1s;
-    }
-    
-    #replay{
-        height:300px;
-    }
-    #github{
-        height:100px;
-    }
+  }
+  
+  #oval {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    left: 640px;
+    top: 390px;
+    background: radial-gradient(ellipse at center, #21dd13 0%,#fff 76%,#fff 84%);
+    border-radius: 100px / 5px;
+    box-shadow: 0px 0px 50px #a3eabe;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  #replay{
+    height:300px;
+  }
+  #github{
+    height:100px;
+  }
 
-    #replay,#github{
+  #replay,#github{
     display:none;
     font-size:5em;
     transition:opacity 3s,transform 1s;
-    }
-    #replay:hover, #github:hover{
+  }
+  #replay:hover, #github:hover{
     transform:scale(1.5)
+  }
+  
+  .fly {
+    animation: flyFromZero .6s ease-in-out forwards;
+  }
+  @keyframes flyFromZero {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  .rollLeft {
+    animation: rollToLeft .6s ease-in-out forwards;
+  }
+  @keyframes rollToLeft {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(0deg);
+      left: 470px
+    }
+  }
+  .rollRight {
+    animation: rollRight .6s ease-in-out forwards;
+  }
+  @keyframes rollRight {
+    from {
+      transform: rotate(-90deg);
+    }
+    to {
+      transform: rotate(0deg);
+      left: 795px
+    }
+  }
+  .textBounce {
+    animation: textBounce .3s ease-in-out forwards;
+  }
+  @keyframes textBounce {
+    0 {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .show {
+    animation: show .2s ease-in-out forwards;
+  }
+  @keyframes show {
+    from {
+      display: none;
+      transform: scale(0);
+    }
+    to {
+      display: block;
+      transform: scale(1);
+    }
+  }
+  .strech {
+    animation: strech .5s ease-in-out forwards;
+  }
+  @keyframes strech {
+    from {
+      width: 100px;
+      left: 640px;
+    }
+    to {
+      width: 330px;
+      left: 520px;
+    }
+  }
+  
+  .flyFromLeft{
+    animation: flyFromLeft 9s linear forwards;
+  }
+  @keyframes flyFromLeft {
+    0% {
+      left: -700px;
+    }
+    5%{
+      left: 200px;
     }
     
-    .fly {
-      animation: flyFromZero .6s ease-in-out forwards;
-    }
-    @keyframes flyFromZero {
-      from {
-        transform: scale(0);
-      }
-      to {
-        transform: scale(1);
-      }
-    }
-    .rollLeft {
-      animation: rollToLeft .6s ease-in-out forwards;
-    }
-    @keyframes rollToLeft {
-      from {
-        transform: rotate(-90deg);
-      }
-      to {
-        transform: rotate(0deg);
-        left: 470px
-      }
-    }
-    .rollRight {
-      animation: rollRight .6s ease-in-out forwards;
-    }
-    @keyframes rollRight {
-      from {
-        transform: rotate(-90deg);
-      }
-      to {
-        transform: rotate(0deg);
-        left: 795px
-      }
-    }
-    .textBounce {
-      animation: textBounce .3s ease-in-out forwards;
-    }
-    @keyframes textBounce {
-      0 {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-    .show {
-      animation: show .2s ease-in-out forwards;
-    }
-    @keyframes show {
-      from {
-        display: none;
-        transform: scale(0);
-      }
-      to {
-        display: block;
-        transform: scale(1);
-      }
-    }
-    .strech {
-      animation: strech .5s ease-in-out forwards;
-    }
-    @keyframes strech {
-      from {
-        width: 100px;
-        left: 640px;
-      }
-      to {
-        width: 330px;
-        left: 520px;
-      }
+    95%{
+      left: 600px;
     }
     
-    .flyFromLeft{
-      animation: flyFromLeft 9s linear forwards;
+    100% {
+      left: 1366px;
     }
-    @keyframes flyFromLeft {
-      0% {
-        left: -700px;
-      }
-      5%{
-        left: 200px;
-      }
-      
-      95%{
-        left: 600px;
-      }
-      
-      100% {
-        left: 1366px;
-      }
+  }
+  .flyFromRight{
+    animation: flyFromRight 9s linear forwards;
+  }
+  @keyframes flyFromRight {
+    0% {
+      left: 1366px;
     }
-    .flyFromRight{
-      animation: flyFromRight 9s linear forwards;
+    5%{
+      left: 700px;
     }
-    @keyframes flyFromRight {
-      0% {
-        left: 1366px;
-      }
-      5%{
-        left: 700px;
-      }
-      
-      95%{
-        left: 300px;
-      }
-      
-      100% {
-        left: -400px;
-      }
+    
+    95%{
+      left: 300px;
     }
-     .zoomToZero {
-      animation: zoomToZero .5s ease-in-out forwards;
+    
+    100% {
+      left: -400px;
     }
-    @keyframes zoomToZero {
-      from {
-        transform: scale(1);
-      }
-      to {
-        transform: scale(0);
-      }
+  }
+  .zoomToZero {
+    animation: zoomToZero .5s ease-in-out forwards;
+  }
+  @keyframes zoomToZero {
+    from {
+      transform: scale(1);
     }
+    to {
+      transform: scale(0);
+    }
+  }
+  .none{
+    display: none;
+  }
 
+  #loader{
+    font-size: 2em;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    position:absolute;
+    left:0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9;
 
-#loader{
-  font-size: 2em;
-  text-align: center;
-             width: 300px;
-            height: 50px;
-            position:absolute;
-            left:0;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            margin: auto;
-}
+  }
+
+  #loader{
+    transition: all 0.5s;
+  }
+
+  #loader:hover{
+    transform:scale(1.2);
+    cursor: pointer;
+  }
 </style>
 <body>
-<div id="loader">loading...</div>
+  <div id="loader">loading...</div>
 
 
-<canvas id="canvas" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
-<canvas id="bg" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
-<sectioin id='OMFG'>
-<omfg class='text-gradient hidden' id='o'>O</omfg>
-<omfg class='text-gradient hidden' id='m'>M</omfg>
-<omfg class='text-gradient hidden' id='f'>F</omfg>
-<omfg class='text-gradient hidden' id='g'>G</omfg>
-<oval id='oval'></oval>
-</sectioin>
-<sectioin id='group'>
-<omfg class='hidden omfg' id='oh'>OH</omfg>
-<omfg class='hidden omfg' id='my'>MY</omfg>
-<omfg class='hidden omfg' id='fucking'>FUCKING</omfg>
-<omfg class='hidden omfg' id='god'>GOD</omfg>
-</sectioin>
+  <canvas id="canvas" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
+  <canvas id="bg" width="1366" height="680" style="position:absolute;z-index:-1"></canvas>
+  <sectioin id='OMFG'>
+    <omfg class='text-gradient hidden' id='o'>O</omfg>
+    <omfg class='text-gradient hidden' id='m'>M</omfg>
+    <omfg class='text-gradient hidden' id='f'>F</omfg>
+    <omfg class='text-gradient hidden' id='g'>G</omfg>
+    <oval id='oval'></oval>
+  </sectioin>
+  <sectioin id='group'>
+    <omfg class='hidden omfg' id='oh'>OH</omfg>
+    <omfg class='hidden omfg' id='my'>MY</omfg>
+    <omfg class='hidden omfg' id='fucking'>FUCKING</omfg>
+    <omfg class='hidden omfg' id='god'>GOD</omfg>
+  </sectioin>
 
-<omfg id='leftFlyin' class='text-gradient'>star me on my github</omfg>
-<omfg id='rightFlyin' class='text-gradient'><a href='https://github.com/html50/audioVisualizer' target='_blank'>@HTML50</a></omfg>
+  <omfg id='leftFlyin' class='text-gradient'>star me on my github</omfg>
+  <omfg id='rightFlyin' class='text-gradient none'><a href='https://github.com/html50/audioVisualizer' target='_blank'>@HTML50</a></omfg>
 
-<replay id='replay' class='hidden text-gradient'><a href='javascript:location.reload()'>replay</a></replay>
-<github id='github' class='hidden text-gradient'><a target='_blank' href='https://github.com/html50/audioVisualizer'>github</a></github>
+  <replay id='replay' class='hidden text-gradient'><a href='javascript:location.reload()'>replay</a></replay>
+  <github id='github' class='hidden text-gradient'><a target='_blank' href='https://github.com/html50/audioVisualizer'>github</a></github>
 
 
 
-<script type="text/javascript" src="./av.js"></script>
+  <script type="text/javascript" src="./av.js"></script>
 </body>
 </html>
