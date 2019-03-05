@@ -16,14 +16,13 @@
 			loader.innerHTML = '<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1105" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css"></style></defs><path d="M900.571429 529.700571L141.714286 951.405714c-17.700571 9.728-32 1.133714-32-18.870857v-841.142857c0-20.004571 14.299429-28.562286 32-18.870857l758.857143 421.705143c17.700571 9.728 17.700571 25.709714 0 35.437714z" fill="#2c2c2c" p-id="1106"></path></svg>'
 		}
 
-		
-
-
+	
 		document.addEventListener('click',function(){
 			init();
 			loader.style.display = 'none'
 			audio.play();
 			fontCSSAnimation();
+			document.removeEventListener('click',arguments.callee);
 		})
 	};
 
